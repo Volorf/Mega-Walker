@@ -10,7 +10,7 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /Recordings/
-.idea
+/.idea
 .gitattributes
 
 # Never ignore Asset meta data
