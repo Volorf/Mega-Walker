@@ -36,10 +36,13 @@ public class Cell : MonoBehaviour
         float zRan = Random.Range(-RANDOM_RANGE, RANDOM_RANGE);
         
         Vector3 offsetVec = new Vector3(xRan, OFFSET, zRan);
+        Vector3 transPos = transform.position;
+        Quaternion transRot = transform.rotation;
 
-        GameObject replicant = Instantiate(this.gameObject, transform.position, transform.rotation);
-        if (hue >= 1f) hue = 0f;
-        replicant.GetComponent<Cell>().hue = hue += COLOR_OFFSET;
+        GameObject replicant = Instantiate(this.gameObject, transPos, transRot);
+        replicant.gameObject.name = "Cell";
+        // if (hue >= 1f) hue = 0f;
+        // replicant.GetComponent<Cell>().hue = hue += COLOR_OFFSET;
         replicant.transform.Rotate(Random.Range(0f, 1f) > 0.5f ? Vector3.forward : Vector3.right, Random.Range(-10f, 10f));
         replicant.transform.Translate(offsetVec, Space.Self);
         
