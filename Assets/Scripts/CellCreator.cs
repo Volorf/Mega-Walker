@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CellCreator : MonoBehaviour
 {
@@ -10,7 +8,6 @@ public class CellCreator : MonoBehaviour
 
     private void Start()
     {
-        
         for (int i = 0; i < numberOfCells; i++)
         {
             float x = Random.Range(-180f, 180f);
@@ -20,11 +17,5 @@ public class CellCreator : MonoBehaviour
             Vector3 rot = new Vector3(x, y, z);
             Instantiate(cell, initPoint, Quaternion.Euler(rot));
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
